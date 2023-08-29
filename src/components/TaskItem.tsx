@@ -5,20 +5,23 @@ import { AppContext } from "../AppContext"
 
 const TaskItem: React.FC = () => {
 
-    const { items, setItems, setTask, setIsButtonActive } = useContext(AppContext);
+    const { items, setItems,setTask, setIsButtonActive,setPosition, setIdPerson } = useContext(AppContext);
 
-    const deleteTask = (idPerson: number) => {
+    const deleteTask = (idPerson: string) => {
         const newTask = items.filter((items) => items.id !== idPerson);
         setItems(newTask)
         setTask("")
     };
-    const editBooleanTask = (idPerson: number) => {
+
+
+    const editBooleanTask = (idPerson: string) => {
         const index = items.findIndex((item) => item.id === idPerson);
         const newTask = [...items];
-        newTask[index].done = !newTask[index].done;
+        setIdPerson(idPerson);
         setItems(newTask);
         setTask(newTask[index].title);
         setIsButtonActive(false)
+        setPosition("bearbeiten")
     };
 
     if (items) {
