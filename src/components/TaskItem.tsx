@@ -26,7 +26,7 @@ const TaskItem: React.FC = () => {
             <ul className=" flex flex-col gap-4 w-full bg-slate-300 justify-between items-center rounded-lg">
                 {
                     items.map((item) => (
-                        <li className={`w-full border-b last:border-b-0  flex justify-between py-2 px-4 ${item.done && " bg-slate-200 text-slate-700"}`} key={item.id}>
+                        <li className={`w-full border-b last:border-b-0 flex justify-between py-2 px-4 ${item.done && " bg-slate-200 text-slate-700"}`} key={item.id}>
                             {`${item.title}`}
 
 
