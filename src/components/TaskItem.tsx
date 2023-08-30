@@ -5,7 +5,7 @@ import { AppContext } from "../AppContext"
 
 const TaskItem: React.FC = () => {
 
-    const { items, setItems,setTask, setIsButtonActive,setPosition, setIdPerson } = useContext(AppContext);
+    const { items, setItems, setTask, setIsButtonActive, setPosition, setIdPerson } = useContext(AppContext);
 
     const deleteTask = (idPerson: string) => {
         const newTask = items.filter((items) => items.id !== idPerson);
@@ -26,7 +26,7 @@ const TaskItem: React.FC = () => {
 
     if (items) {
         return (
-            <ul className=" flex flex-col gap-4 w-full bg-slate-300 justify-between items-center rounded-lg">
+            <ul className=" flex flex-col gap-4 w-full  bg-slate-300 justify-between items-center rounded-lg">
                 {
                     items.map((item) => (
                         <li className={`w-full border-b last:border-b-0 flex justify-between py-2 px-4 ${item.done && " bg-slate-200 text-slate-700"}`} key={item.id}>
