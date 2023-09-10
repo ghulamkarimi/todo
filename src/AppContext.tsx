@@ -17,6 +17,11 @@ interface IApp {
     setIsButtonActive: React.Dispatch<React.SetStateAction<boolean>>;
     idPerson: string;
     setIdPerson: (idPerson: string) => void;
+    fullName: string;
+    setFullName: (fullName: string) => void;
+    email: string;
+    setEmail: (email: string) => void;
+
 }
 
 export interface IAppProvider {
@@ -33,6 +38,9 @@ export const AppContextProvider: React.FC<IAppProvider> = ({ children }) => {
     const [idPerson, setIdPerson] = useState<string>("")
     const [task, setTask] = useState<string>("");
     const [isButtonActive, setIsButtonActive] = useState(true);
+    const [fullName, setFullName] = useState("");
+    const [email, setEmail] = useState("");
+
     return (
         <AppContext.Provider
             value={{
@@ -40,9 +48,9 @@ export const AppContextProvider: React.FC<IAppProvider> = ({ children }) => {
                 task, setTask,
                 isButtonActive, setIsButtonActive,
                 position, setPosition,
-                idPerson,
-                setIdPerson
-
+                idPerson, setIdPerson,
+                fullName, setFullName,
+                email, setEmail,
             }}>
             {children}
         </AppContext.Provider>

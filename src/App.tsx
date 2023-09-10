@@ -1,15 +1,12 @@
-
-
-import TopForm from "./components/TopForm"
-
-
+import { Outlet } from "react-router-dom"
 
 const App = () => {
   return (
-    <div className="bg-slate-500 flex justify-center items-center h-screen px-4 w-full  ">
-      <TopForm />
-
+    <div>
+      <Outlet />
     </div>
+
+
   )
 }
 

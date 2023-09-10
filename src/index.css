@@ -1,3 +1,9 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+.registerinput::placeholder {
+  color: gray;
+  background: rgb(148 163 184);
+   
+}

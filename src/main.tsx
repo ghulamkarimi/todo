@@ -1,13 +1,17 @@
-import React from 'react'
+
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
+
 import './index.css'
 import { AppContextProvider } from './AppContext.tsx'
+import { RouterProvider } from 'react-router-dom'
+import { Router } from './Router.tsx'
+ 
+
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <AppContextProvider>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+
+    <RouterProvider router={Router} />
+
   </AppContextProvider>
 )
